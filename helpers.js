@@ -78,10 +78,12 @@
       return value;
     },
 
-    isObject(item) {
-      return typeof item === 'object' && item !== null;
-    },
-
+     /**
+     * Check if object is empty.
+     *
+     * @param obj
+     * @return {boolean}
+     */
     isObjectEmpty(obj) {
       for (var prop in obj) {
         if (obj.hasOwnProperty(prop)) {
@@ -91,7 +93,7 @@
       return true;
     },
     
-        /**
+     /**
      * Round value to given amount of decimals.
      *
      * @param value
@@ -111,7 +113,7 @@
       return Math.round(parseFloat(value) * multiplier) / multiplier;
     },
     
-        /**
+     /**
      * Copy element value to clipboard.
      *
      * @param id
