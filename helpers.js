@@ -173,7 +173,7 @@ export const sumArray = (arr) => {
  */
 export const uniq = (arr) => {
   return [...Set(arr)];
-}
+};
 
 
 /**
@@ -181,4 +181,16 @@ export const uniq = (arr) => {
  *  @param arr
  */
 export const fromPairs = (arr) => arr.reduce((acc, val) => (acc[val[0]] = val[1],
-  acc), {})
+  acc), {});
+
+/**
+ *
+ * @param str
+ * @returns {string}
+ * removes consecutive white spaces and trims string
+ */
+
+export const smartTrim = (str) => {
+  if (!str) return '';
+  return str.trim().replace(/\s+/g, ' ');
+};
