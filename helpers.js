@@ -1,4 +1,14 @@
 /**
+ * Usage: filterByCriteria(arr, { age: 21, color: 'blue' }))
+ */
+export const filterByCriteria = (arr, criteria) {
+  return arr.filter(function(obj) {
+    return Object.keys(criteria).every(function(c) {
+      return obj[c] == criteria[c];
+    });
+  });
+}
+/**
  * Strip object from its original. (useful for object copy)
  *
  * @param object
