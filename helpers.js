@@ -204,3 +204,11 @@ export const smartTrim = (str) => {
   if (!str) return '';
   return str.trim().replace(/\s+/g, ' ');
 };
+
+/**
+* @param ms {integer} - time in miliseconds
+* usage: await sleep (1000)
+*/
+export const async sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
