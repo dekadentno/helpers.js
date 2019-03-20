@@ -212,3 +212,11 @@ export const smartTrim = (str) => {
 export const async sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+/**
+* @param delta {integer} - number of minutes
+* usage: minutesFromNow(15)
+*/
+export const minutesFromNow = (delta) => {
+   return new Date(new Date().getTime() + delta * 60 * 1000)
+}
