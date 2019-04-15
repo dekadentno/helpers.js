@@ -43,6 +43,11 @@ export const findObjectByKey = (array, key, value) => {
  * @returns {*}
  */
 export const deleteObjectByKey = (array, key, value) => {
+  return array.filter(el => {
+    return el.name !== value;
+  }
+};
+export const deleteObjectByKey = (array, key, value) => {
   if (array.length === 0) return;
   for (var i = 0; i < array.length; i++) {
     if (array[i][key] === value) {
