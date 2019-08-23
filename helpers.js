@@ -225,3 +225,19 @@ export const async sleep = (ms) => {
 export const minutesFromNow = (delta) => {
    return new Date(new Date().getTime() + delta * 60 * 1000)
 }
+
+/**
+* detect slow connection
+*/
+export const detectSlowConnection = () => {
+  navigator.connection.addEventListener('change', () => {
+	// round trip time in ms
+	let rtt = navigator.connection.rtt;
+	// connection type
+	let connection = navigator.connection.effectiveType;
+	// slow connection 
+	if (rtt > 500 || connection.indexOf('2g') > -1) {
+		// handle slow connection
+	}
+});
+};
