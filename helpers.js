@@ -241,3 +241,10 @@ export const detectSlowConnection = () => {
 	}
 });
 };
+	
+/**
+* generate array of numbers 
+*/
+export const generateArray = (len = 20) => {
+	return Array.from({length: len}, (v, k) => k + 1);
+};
