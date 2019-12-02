@@ -248,3 +248,18 @@ export const detectSlowConnection = () => {
 export const generateArray = (len = 20) => {
 	return Array.from({length: len}, (v, k) => k + 1);
 };
+	
+/**
+* export array of objects to csv
+* https://codepen.io/duc810/pen/MNXOqW?editors=1111
+*/
+export const exportToCsv = (arrData) => {
+      let csvContent = 'data:text/csv;charset=utf-8,';
+      csvContent += [Object.keys(arrData[0]).join(';'), ...arrData.map((item) => Object.values(item).join(';'))].join('\n').replace(/(^\[)|(\]$)/gm, '');
+      const data = encodeURI(csvContent);
+      const link = document.createElement('a');
+      link.setAttribute('href', data);
+      link.setAttribute('download', 'export.csv');
+      link.click();
+};
+	
