@@ -262,4 +262,15 @@ export const exportToCsv = (arrData) => {
       link.setAttribute('download', 'export.csv');
       link.click();
 };
+
+/**
+* async await helper without try-catch blocks
+* inspired by https://github.com/scopsy/await-to-js
+*/
+export const vow = (promise) => {
+	return promise.then(data => {
+		return [null, data];
+	})
+	.catch(err => [err]);
+};
 	
