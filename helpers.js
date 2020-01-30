@@ -273,4 +273,18 @@ export const vow = (promise) => {
 	})
 	.catch(err => [err]);
 };
+
+/**
+* native implementation of lodash get method
+usage: _get(object, 'a.b.c.d', null)
+*/
+export const _get = (obj, path, defaultValue) => {
+  const travel = regexp =>
+    String.prototype.split
+      .call(path, regexp)
+      .filter(Boolean)
+      .reduce((res, key) => (res !== null && res !== undefined ? res[key] : res), obj);
+  const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/);
+  return result === undefined || result === obj ? defaultValue : result;
+};
 	
