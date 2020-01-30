@@ -276,7 +276,8 @@ export const vow = (promise) => {
 
 /**
 * native implementation of lodash get method
-usage: _get(object, 'a.b.c.d', null)
+* https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_get
+* usage: _get(object, 'a.b.c.d', null)
 */
 export const _get = (obj, path, defaultValue) => {
   const travel = regexp =>
