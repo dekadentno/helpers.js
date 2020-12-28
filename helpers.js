@@ -289,3 +289,10 @@ export const _get = (obj, path, defaultValue) => {
   return result === undefined || result === obj ? defaultValue : result;
 };
 	
+/**
+* lazy ass
+*/
+export const isDev = () => {
+   return process.env.NODE_ENV === 'local' || process.env.NODE_ENV === 'development';
+};
+	
